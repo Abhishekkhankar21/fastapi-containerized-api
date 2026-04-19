@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    environment {
+        APP_NAME = "fastapi-app"
+    }
+
+    stages {
+
+        stage('Clone Repo') {
+            steps {
+                git 'https://github.com/Abhishekkhankar21/Dockerized-Fastapi.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t fastapi-app .'
+            }
+        }
+
+        stage('Deploy Container') {
+            steps {
+                sh '''
+                docker stop fastapi_app || true
+                docker rm fastapi_app || true
+                docker run -d -p 8000:8000 \
+                  -v $(pwd)/data:/app/data \
+                  --name fastapi_app fastapi-app
+                '''
+            }
+        }
+    }
+}
