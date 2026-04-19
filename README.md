@@ -1,12 +1,12 @@
 # docker-fastapi-test
 
-# 🚀 FastAPI Dockerized Application with CI/CD & Monitoring
+. FastAPI Dockerized Application with CI/CD & Monitoring
 
 This project demonstrates a complete DevOps implementation of a FastAPI application, including containerization, data persistence, CI/CD pipeline, and monitoring using Prometheus and Grafana.
 
 ---
 
-## 📌 Project Overview
+. Project Overview
 
 The application provides basic user management APIs:
 
@@ -20,7 +20,7 @@ Data is stored in a `users.json` file (no database used).
 
 ---
 
-## 🛠️ Tech Stack
+. TECH STACK
 
 - FastAPI
 - Docker & Docker Compose
@@ -30,9 +30,9 @@ Data is stored in a `users.json` file (no database used).
 
 ---
 
-## 🐳 Docker Setup
+. 🐳 Docker Setup
 
-### Build and Run using Docker Compose
+ #Build and Run using Docker Compose
 
 ```bash
 docker-compose up --build -d
@@ -42,7 +42,7 @@ FastAPI Docs: http://localhost:8000/docs
 Prometheus: http://localhost:9090
 Grafana: http://localhost:3000
 
-💾 Data Persistence
+. Data Persistence
 User data is stored in data/users.json
 Docker volume is used to persist data
 Verification Steps:
@@ -57,7 +57,7 @@ Restart:
 docker-compose up -d
 Check /users → Data remains intact ✅
 
-⚙️ CI/CD Pipeline (Jenkins)
+. CI/CD Pipeline (Jenkins)
 
 The Jenkins pipeline automates:
 
